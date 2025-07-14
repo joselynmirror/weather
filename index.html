@@ -1,0 +1,119 @@
+<!-- Aplicación del Clima (Weather App):
+Consumo de API OpenMeteo (tendrás que registrarte en una API de clima como OpenWeatherMap o WeatherAPI), 
+manejo de JSON, asincronía (fetch o async/await), mostrar datos dinámicos.
+Funcionalidades: Buscar clima por ciudad, mostrar temperatura, descripción, iconos del clima. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=air,location_on,search,water_drop" />
+</head>
+
+<body>
+    <main class="main-container">
+        <header class="input-container">
+            <input id="city-input" class="city-input" placeholder="Buscar la ciudad" type="text">
+            <button id="search-btn" class="search-btn">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+        </header>
+
+        <section id="weather-info" class="weather-info" style="display: none;">
+            <div class="location-date-container">
+                <div class="location">
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+                    <h4 id="country-txt" class="country-txt">Venezuela</h4>
+                </div>
+                <h5 id="current-date-txt" class="current-date-txt regular-txt">Wed, 07 Aug</h5>
+            </div>
+
+            <div class="weater-sumary-container">
+                <img src="assets/weather/clouds.svg" id="weather-sumary-img" class="weather-sumary-img">
+                <div class="weather-sumary-info">
+                    <h1 id="temp-txt" class="temp-txt">28 °C</h1>
+                    <h3 id="condition-txt" class="condition-txt regular-txt">Clouds</h3>
+                </div>
+            </div>
+
+            <div class="weather-conditions-container">
+                <div class="condition-item">
+                    <span class="material-symbols-outlined">
+                        water_drop
+                    </span>
+                    <div class="condition-info">
+                        <h5 class="regular-txt">Humedad</h5>
+                        <h5 id="humidity-value-txt" class="humidity-value-txt">55%</h5>
+                    </div>
+                </div>
+
+                <div class="condition-item">
+                    <span class="material-symbols-outlined">
+                        air
+                    </span>
+                    <div class="condition-info">
+                        <h5 class="regular-txt">Viento</h5>
+                        <h5 id="wind-value-txt" class="wind-value-txt">2 M/s</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-items-container">
+                <div class="forecast-item">
+                    <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                    <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29 °C</h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                    <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29 °C</h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                    <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29 °C</h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                    <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h5 class="forecast-item-temp">29 °C</h5>
+                </div>
+            </div>
+        </section>
+
+        <section id="search-city" class="search-city section-message">
+            <img src="assets/message/search-city.png">
+            <div>
+                <h1>Busque la ciudad</h1>
+                <h4 class="regular-txt">
+                    Descubra las condiciones meteorológicas de la ciudad
+                </h4>
+            </div>
+        </section>
+
+        <section id="not-found" class="not-found section-message" style="display: none;">
+            <img src="assets/message/not-found.png">
+            <div>
+                <h1>Busque la ciudad</h1>
+                <h4 class="regular-txt">
+                    Descubra las condiciones meteorológicas de la ciudad
+                </h4>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
