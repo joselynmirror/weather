@@ -32,17 +32,21 @@ body::before {
 
 .regular-txt {
     font-weight: 400;
+    opacity: 0.9;
 }
 
 .main-container {
-    border: solid;
     width: 300px;
     height: 496px;
     z-index: 1;
-    background: linear-gradient(to top, rgb(0, 0, 0, 0.15), rgb(255, 255, 255, 0.15));
-    border-radius: 12px;
-    backdrop-filter: blur(100px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    backdrop-filter: blur(40px);
     padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .input-container {
@@ -60,10 +64,6 @@ body::before {
     font-weight: 500;
     transition: 0.25s border;
     padding-right: 45px;
-}
-
-.city-input::focus {
-    border: 3px solid rgb(0, 0, 0, 0.15);
 }
 
 .city-input::placeholder {
@@ -91,7 +91,6 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .location {
@@ -130,28 +129,29 @@ body::before {
     font-size: 30px;
 }
 
-.forecast-items-container{
+.forecast-items-container {
     display: flex;
     gap: 15px;
     overflow: scroll;
     padding-bottom: 12px;
 }
 
-.forecast-items-container::-webkit-scrollbar{
+.forecast-items-container::-webkit-scrollbar {
     height: 8px;
+    width: 0;
 }
 
-.forecast-items-container::-webkit-scrollbar-track{
+.forecast-items-container::-webkit-scrollbar-track {
     background: rgb(0, 0, 0, 0.1);
     border-radius: 99px;
 }
 
-.forecast-items-container::-webkit-scrollbar-thumb{
+.forecast-items-container::-webkit-scrollbar-thumb {
     background: rgb(0, 0, 0, 0.15);
     border-radius: 99px;
 }
 
-.forecast-item{
+.forecast-item {
     min-width: 70px;
     background: rgb(255, 255, 255, 0.1);
     display: flex;
@@ -163,16 +163,16 @@ body::before {
     transition: 0.3s background;
 }
 
-.forecast-item:hover{
+.forecast-item:hover {
     background: rgb(255, 255, 255, 0.15);
 }
 
-.forecast-item-img{
+.forecast-item-img {
     width: 35px;
     height: 35px;
 }
 
-.section-message{
+.section-message {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,7 +181,7 @@ body::before {
     margin-top: 35%;
 }
 
-.section-message img{
+.section-message img {
     height: 100px;
     width: fit-content;
 }

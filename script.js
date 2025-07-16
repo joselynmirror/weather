@@ -102,7 +102,6 @@ async function updateForecastsInfo(city) {
 }
 
 function updateForecastsItems(weatherData) {
-    console.log(weatherData)
     const {
         dt_txt: date,
         weather: [{ id }],
